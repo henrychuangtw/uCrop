@@ -42,6 +42,17 @@
                 android:text="@string/button_pick_amp_crop"
                 android:textAllCaps="true"
                 android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/button_random_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/button_crop_random_image"
+                android:textAllCaps="true"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@android:color/white"
                 android:textStyle="bold"/>
 
             <View
@@ -61,6 +72,13 @@
                     android:layout_gravity="center"
                     android:text="@string/label_aspect_ratio"
                     android:textAppearance="?android:textAppearanceSmall"/>
+
+                <CheckBox
+                    android:id="@+id/checkbox_freestyle_crop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_freestyle_crop"
+                    android:textAppearance="?android:textAppearanceMedium"/>
 
                 <RadioButton
                     android:id="@+id/radio_dynamic"
@@ -84,13 +102,36 @@
                     android:text="@string/label_square"
                     android:textAppearance="?android:textAppearanceMedium"/>
 
-                <RadioButton
-                    android:id="@+id/radio_16_9"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="140dp"
                     android:layout_height="wrap_content"
-                    android:text="16x9"
-                    android:textAppearance="?android:textAppearanceMedium"
-                    tools:ignore="HardcodedText"/>
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edit_text_ratio_x"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="x"
+                        android:inputType="numberDecimal"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="to"
+                        tools:ignore="HardcodedText"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_ratio_y"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:hint="y"
+                        android:inputType="numberDecimal"/>
+
+                </LinearLayout>
 
             </RadioGroup>
 
@@ -126,7 +167,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:hint="@string/label_width"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="number"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,7 +182,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:hint="@string/label_height"
-                    android:inputType="numberDecimal"/>
+                    android:inputType="number"/>
 
             </LinearLayout>
 
@@ -180,14 +221,6 @@
                     android:textAppearance="?android:textAppearanceMedium"
                     tools:ignore="HardcodedText"/>
 
-                <RadioButton
-                    android:id="@+id/radio_webp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WEBP"
-                    android:textAppearance="?android:textAppearanceMedium"
-                    tools:ignore="HardcodedText"/>
-
                 <TextView
                     android:id="@+id/text_view_quality"
                     android:layout_width="wrap_content"
@@ -203,6 +236,26 @@
                     tools:progress="90"/>
 
             </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:background="@color/colorAccent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/label_ui"
+                android:textAppearance="?android:textAppearanceSmall"/>
+
+            <CheckBox
+                android:id="@+id/checkbox_hide_bottom_controls"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_hide_bottom_ui_controls"
+                android:textAppearance="?android:textAppearanceMedium"/>
 
         </LinearLayout>
 
